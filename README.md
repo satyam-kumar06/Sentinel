@@ -2,7 +2,7 @@ Rocket Launch Risk Assessment System
 SENTINEL is a real-time launch risk assessment platform that aggregates live atmospheric, space weather, and orbital data through a three-branch parallel pipeline to produce GO / CAUTION / HOLD / NO-GO decisions.
 
 Architecture
-SENTINEL
+
          Branch 1 — Hard Rules       NASA/FAA/NOAA rule engine (11 rules, binary pass/fail)
          
          Branch 2 — Soft Scoring     Weighted domain scoring (atmospheric / space / orbital)
