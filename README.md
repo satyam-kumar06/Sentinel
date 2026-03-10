@@ -75,36 +75,13 @@ Default Launch Site
 SDSC Sriharikota, India (13.7199°N, 80.2304°E)
 Any latitude/longitude can be passed in the /assess request body.
 
-Project Structure
-sentinel/
-├── api.py                  FastAPI app + endpoints
-├── aggregator.py           Three-branch pipeline orchestrator
-├── config.py               Thresholds and API base URLs
-├── report_generator.py     Plain-text report formatter
-├── data_fetchers/
-│   ├── weather.py          NWS (US) + Open-Meteo (global)
-│   ├── space_weather.py    NOAA SWPC + NASA DONKI
-│   └── orbital.py          CelesTrak TLE + SGP4 Pc calculation
-└── engines/
-    ├── hard_rules.py       Binary rule evaluation
-    ├── soft_scoring.py     Weighted penalty scoring
-    └── ml_model.py         XGBoost anomaly detection
-
-sentinel-ui/
-└── src/
-    ├── pages/
-    │   ├── DashboardPage.jsx
-    │   ├── MonitorPage.jsx
-    │   └── AssessPage.jsx
-    └── components/
-        └── Layout.jsx
 
 Known Limitations
 
 ML model trained on synthetic data (real NASA/ISRO launch history deferred)
 Collision probability uses physics-based cross-section model, not real CDM covariance matrices
 All vehicles use the same LCC rules (vehicle-specific rules not yet implemented)
-CelesTrak may be blocked on certain university proxies (use hotspot)
+
 
 
 Built With
