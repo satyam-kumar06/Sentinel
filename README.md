@@ -4,7 +4,9 @@ SENTINEL is a real-time launch risk assessment platform that aggregates live atm
 Architecture
 SENTINEL
          Branch 1 — Hard Rules       NASA/FAA/NOAA rule engine (11 rules, binary pass/fail)
+         
          Branch 2 — Soft Scoring     Weighted domain scoring (atmospheric / space / orbital)
+         
          Branch 3 — ML Detection     XGBoost anomaly detection
          
 Aggregator → Decision → Report
