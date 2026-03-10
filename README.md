@@ -56,17 +56,28 @@ Score can be 100/100 with a NO-GO — this means perfect conditions but one abso
 Hard Rules (Branch 1)
 All sourced from official range safety documentation:
 
-Lightning (NASA LLCC Rule 1)
-Precipitation (NASA LLCC Rule 5)
-Wind Speed ≤ 33 kts (Atlas V LCC / NASA KSC)
-Visibility ≥ 4 mi (NASA KSC Weather Rules)
-Ceiling ≥ 6000 ft (Atlas V LCC)
-Thunderstorm Alert (NASA LLCC / 45th Weather Squadron)
-CME Arrival within 6 hours (NOAA SWPC)
-Radio Blackout < R3 (NOAA R-Scale)
-Geomagnetic Storm < G4 (NOAA G-Scale)
-Crewed Collision Probability ≤ 1e-6 (FAA 14 CFR §450.169(a))
-Debris Collision Probability ≤ 1e-5 (FAA 14 CFR §450.169(a))
+         
+         Lightning (NASA LLCC Rule 1)
+         
+         Precipitation (NASA LLCC Rule 5)
+         
+         Wind Speed ≤ 33 kts (Atlas V LCC / NASA KSC)
+         
+         Visibility ≥ 4 mi (NASA KSC Weather Rules)
+         
+         Ceiling ≥ 6000 ft (Atlas V LCC)
+         
+         Thunderstorm Alert (NASA LLCC / 45th Weather Squadron)
+         
+         CME Arrival within 6 hours (NOAA SWPC)
+         
+         Radio Blackout < R3 (NOAA R-Scale)
+         
+         Geomagnetic Storm < G4 (NOAA G-Scale)
+         
+         Crewed Collision Probability ≤ 1e-6 (FAA 14 CFR §450.169(a))
+         
+         Debris Collision Probability ≤ 1e-5 (FAA 14 CFR §450.169(a))
 
 
 Environment Variables
@@ -80,9 +91,11 @@ Any latitude/longitude can be passed in the /assess request body.
 
 Known Limitations
 
-ML model trained on synthetic data (real NASA/ISRO launch history deferred)
-Collision probability uses physics-based cross-section model, not real CDM covariance matrices
-All vehicles use the same LCC rules (vehicle-specific rules not yet implemented)
+         ML model trained on synthetic data (real NASA/ISRO launch history deferred)
+
+         Collision probability uses physics-based cross-section model, not real CDM covariance matrices
+
+         All vehicles use the same LCC rules (vehicle-specific rules not yet implemented)
 
 
 
