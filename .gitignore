@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.pyc
+*.db
+.venv/
+sentinel-ui/node_modules/
+sentinel-ui/dist/
+sentinel/.env
+sentinel/*.db
