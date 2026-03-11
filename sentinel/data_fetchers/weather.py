@@ -37,7 +37,16 @@ async def fetch_weather(lat: float, lng: float) -> Optional[WeatherData]:
         return await _fetch_openmeteo(lat, lng)
 
 
+_weather_cache = {}
+_cache_time = {}
+
 async def _fetch_openmeteo(lat: float, lng: float) -> Optional[WeatherData]:
+    cache_key = f"{lat},{lng}"
+    now = datetime.utcnow().timestamp()
+
+    if cache_key in _weather_cache and now - _cache_time.get(cache_key, 0) < 300:
+        return _weather_cache[cache_key]
+
     url = (
         f"https://api.open-meteo.com/v1/forecast"
         f"?latitude={lat}&longitude={lng}"
@@ -60,7 +69,7 @@ async def _fetch_openmeteo(lat: float, lng: float) -> Optional[WeatherData]:
             thunder  = wcode in [95, 96, 99]
             lightning = thunder
 
-            return WeatherData(
+            result = WeatherData(
                 wind_speed_kts=round(wind_kts, 1),
                 visibility_mi=round(vis_mi, 2),
                 ceiling_ft=99999.0,
@@ -71,6 +80,11 @@ async def _fetch_openmeteo(lat: float, lng: float) -> Optional[WeatherData]:
                 alerts=[],
                 timestamp=datetime.utcnow().isoformat()
             )
+
+            _weather_cache[cache_key] = result
+            _cache_time[cache_key] = now
+            return result
+
     except Exception as e:
         logger.error(f"Open-Meteo fetch failed: {e}")
         return None
